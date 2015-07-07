@@ -14,6 +14,7 @@ var watchify = require("gulp-watchify");
 var streamify = require('gulp-streamify');
 var merge = require('merge-stream');
 var pleeease = require('gulp-pleeease');
+//経過時間を知りたい場合は、以下のコメントを外す
 //require("time-require");
 
 /** task **/
