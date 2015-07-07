@@ -164,7 +164,6 @@ gulp.task('browserify',['concatJS'],watchify(function(watchify) {
     );
 }));
 gulp.task ('watchify', ['enable-watch-mode', 'browserify']);
-
 /** watch **/
 //watchを使用する場合は、ターミナルで「$ gulp watch」
 gulp.task('watch', ['watchify'],function() {
