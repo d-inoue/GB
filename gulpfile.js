@@ -13,7 +13,7 @@ var notify = require("gulp-notify");
 var watchify = require("gulp-watchify");
 var streamify = require('gulp-streamify');
 var merge = require('merge-stream');
-var pleeease = require('gulp-pleeease');
+var please = require('gulp-pleeease');
 //経過時間を知りたい場合は、以下のコメントを外す
 //require("time-require");
 
@@ -37,21 +37,17 @@ gulp.task('compass', function(){
       css: 'css/',
       sass: 'assets/sass/'
     }))
-  );
+    );
 });
 // cssPle
 //ベンダープレフィックスなど
 gulp.task('cssPle', ['compass'],function() {
-    return gulp.src('css/**/*.css')
-    .pipe(pleeease({
-        fallbacks: {
-            autoprefixer: ['last 4 versions'] //各ブラウザ最新4バージョンまでサポート
-        },
-        optimizers: {
-            minifier: false //圧縮の有無
-        }
-    }))
-    .pipe(gulp.dest('css/'));
+  return gulp.src('css/**/*.css')
+  .pipe(please({
+    autoprefixer: {"browsers": ["last 4 versions"]},//各ブラウザ最新4バージョンまでサポート
+    minifier: false//圧縮の有無
+  }))
+  .pipe(gulp.dest('css/'));
 });
 // cssMin
 //cssファイルの圧縮
@@ -67,7 +63,7 @@ gulp.task('cssMin',['cssPle'], function () {
     .pipe(cssmin())
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('cssmin/'))
-  );
+    );
 });
 // compass_Lib
 //scss（lib）ファイルのコンパイル
@@ -164,6 +160,7 @@ gulp.task('browserify',['concatJS'],watchify(function(watchify) {
     );
 }));
 gulp.task ('watchify', ['enable-watch-mode', 'browserify']);
+
 /** watch **/
 //watchを使用する場合は、ターミナルで「$ gulp watch」
 gulp.task('watch', ['watchify'],function() {
@@ -182,4 +179,4 @@ gulp.task('default',[
   'cssMin',
   'browserify'
   ]
-);
+  );
