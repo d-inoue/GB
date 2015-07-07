@@ -1,0 +1,116 @@
+@charset "UTF-8";
+/*compass*/
+/*common*/
+/*
+*  Init Contents
+- Base Style
+- Mixin Style
+- Reset Style
+- Setting Style
+*
+*/
+/* Base Style
+-------------------------------------------------- */
+/* Mixin Style
+-------------------------------------------------- */
+/* Reset Style
+-------------------------------------------------- */
+/* Setting Style
+-------------------------------------------------- */
+body {
+  font-size: 12px;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover, a:active, a:link {
+  text-decoration: none;
+}
+
+/*
+*  Pages Contents
+- sample page
+*
+*/
+/* sample page
+-------------------------------------------------- */
+/*
+*
+* sample page
+*
+*/
+/*
+*  Parts Contents
+- Animation Style
+- Bg Style
+- Box Style
+- Button Style
+- Footer Style
+- Form Style
+- Header Style
+- List Style
+- Modal Style
+- Navigation & Menu Style
+- Paragraph style
+- Separate Style
+- Title Style
+- Modal Style
+*
+*/
+/* Animation Style
+-------------------------------------------------- */
+/* Bg Style
+-------------------------------------------------- */
+/* Box Style
+-------------------------------------------------- */
+/* Button Style
+-------------------------------------------------- */
+/* Footer Style
+-------------------------------------------------- */
+/* Form Style
+-------------------------------------------------- */
+/* Header Style
+-------------------------------------------------- */
+/* List Style
+-------------------------------------------------- */
+/* Modal Style
+-------------------------------------------------- */
+/* Navigation & Menu Style
+-------------------------------------------------- */
+/* Paragraph style
+-------------------------------------------------- */
+/* Separate  Style
+-------------------------------------------------- */
+/* Title Style
+-------------------------------------------------- */
+/* BEM */
+.block {
+  /* block */
+  background: -webkit-linear-gradient(red, blue);
+  background: linear-gradient(red, blue);
+}
+.block__element1 {
+  /* element */
+  width: 30px;
+}
+　 .block__element1_modifier1 {
+  /* modifier */
+  background-color: #ccc;
+}
+.block__element1_modifier2 {
+  /* modifier */
+  background-color: #111;
+}
+.block__element1_modifier2_modifier3 {
+  /* modifier */
+  color: #ddd;
+}
+.block__element1_modifier2_modifier4 {
+  /* modifier */
+  color: #ccc;
+}
+.block__element2 {
+  /* element */
+  width: 60px;
+}

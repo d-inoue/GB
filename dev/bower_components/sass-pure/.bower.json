@@ -1,0 +1,32 @@
+{
+  "name": "sass-pure",
+  "homepage": "https://github.com/toddlawton/sass-pure",
+  "authors": [
+    "toddlawton <toddbee@gmail.com>"
+  ],
+  "description": "A lightweight, customizable port of Pure CSS into SASS.",
+  "main": "pure.scss",
+  "keywords": [
+    "Pure",
+    "CSS",
+    "Sass"
+  ],
+  "license": "BSD",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "d308082642",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "d3080826420627d0f25438f126eec585cd4bdd81"
+  },
+  "_source": "git://github.com/toddlawton/sass-pure.git",
+  "_target": "*",
+  "_originalSource": "sass-pure",
+  "_direct": true
+}
