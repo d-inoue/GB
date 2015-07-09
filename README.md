@@ -1,1 +1,1 @@
-# Gulp-Bower
+# Gulp+Bower
