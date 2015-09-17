@@ -1,19 +1,30 @@
 /** require **/
 //プラグインの読み込み
-var gulp = require("gulp");
-var compass = require('gulp-compass');
-var cssmin = require('gulp-cssmin');
-var rename = require('gulp-rename');
-var filter = require('gulp-filter');
+var gulp           = require("gulp");
+var compass        = require('gulp-compass');
+var cssmin         = require('gulp-cssmin');
+var rename         = require('gulp-rename');
+var filter         = require('gulp-filter');
 var mainBowerFiles = require('main-bower-files');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var plumber = require('gulp-plumber');
-var notify = require("gulp-notify");
-var watchify = require("gulp-watchify");
-var streamify = require('gulp-streamify');
-var merge = require('merge-stream');
-var please = require('gulp-pleeease');
+var concat         = require('gulp-concat');
+var uglify         = require('gulp-uglify');
+var plumber        = require('gulp-plumber');
+var notify         = require("gulp-notify");
+var watchify       = require("gulp-watchify");
+var streamify      = require('gulp-streamify');
+var merge          = require('merge-stream');
+var please         = require('gulp-pleeease');
+//browserSyncを使用する場合は、以下とこのファイル最後のwatchとdefaultタスクのコメントを外す
+// var browserSync    = require('browser-sync').create();
+// var reload         = browserSync.reload;
+// /** browser-sync **/
+// var source        = "./**/*";
+// gulp.task('browser-sync', function() {
+//   browserSync.init({
+//     proxy: "192.168.33.12"
+//   });
+// });
+
 //経過時間を知りたい場合は、以下のコメントを外す
 //require("time-require");
 
@@ -37,7 +48,7 @@ gulp.task('compass', function(){
       css: 'css/',
       sass: 'assets/sass/'
     }))
-    );
+  );
 });
 // cssPle
 //ベンダープレフィックスなど
@@ -166,6 +177,7 @@ gulp.task ('watchify', ['enable-watch-mode', 'browserify']);
 gulp.task('watch', ['watchify'],function() {
   gulp.watch('assets/**/*.scss', ['cssMin']);
   gulp.watch('assets/**/*.js', ['concatJS']);
+  gulp.watch(source, reload);
 });
 /** sublime task **/
 //sublime用のタスク（sublimeでビルドシステムを追加する必要がある）
@@ -177,6 +189,8 @@ gulp.task('default',[
   'uglifyJS_lib',
   'cssMin_Lib',
   'cssMin',
-  'browserify'
+  'browserify',
+  //'browser-sync',
+  'watch'
   ]
-  );
+);
